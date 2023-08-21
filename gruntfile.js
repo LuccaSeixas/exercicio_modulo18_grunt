@@ -11,22 +11,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        replace:{
-            dist:{
-                options: {
-                    patterns: [
-                        {
-                            match:'ENDERECO_DO_CSS',
-                            replacement: './styles/main.min.css'
-                        },
-                        {
-                            match:'ENDERECO_DO_JS',
-                            replacement: './scripts/main.min.js'
-                        }
-                    ]
-                },
-            }
-        },
         uglify: {
             target: {
                 files: {
@@ -40,6 +24,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('build', ['less:production', 'replace:dist', 'uglify']);
+    grunt.registerTask('build', ['less:production', 'uglify']);
 
 }
